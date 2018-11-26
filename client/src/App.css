@@ -21,3 +21,6 @@ opacity: 1;
 transition: opacity 500ms ease-in;
 }
 
+.legend {
+    margin-bottom: 2rem;
+}

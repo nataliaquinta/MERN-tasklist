@@ -46,7 +46,8 @@ class ItemModal extends Component {
         e.preventDefault();
         const newItem = {
             name: this.state.name,
-            color: this.state.color
+            color: this.state.color,
+           
         }
     
         //Add item via addItem action
@@ -85,7 +86,7 @@ class ItemModal extends Component {
                         />
                     </FormGroup>
 
-                        <FormGroup>
+                     <FormGroup>
                             <Label for="item">Select color</Label>
                             <Input 
                             type="select" 
@@ -95,15 +96,13 @@ class ItemModal extends Component {
                             onChange={this.onChange}
                             >
                             <option value="" disabled>Select Color</option>
-                            <option value="success">Green</option>
+                            <option value='success'>Green</option>
                             <option value="info">Blue</option>
                             <option value="warning">Yellow</option>
                             <option value="danger">Red</option>
                             <option value="secondary">Grey</option>
                             </Input>
                             </FormGroup>
-
-                    
                        
                         <Button
                         color="dark"
@@ -125,4 +124,7 @@ const mapStateToProps = state => ({
     item: state.item
 });
 
+
+
 export default connect(mapStateToProps, {addItem})(ItemModal);
+

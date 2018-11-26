@@ -40,6 +40,7 @@ class AppNavbar extends Component {
                 </Container>
             </Navbar>
         </div>
+        
         );  
     }
     
