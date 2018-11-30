@@ -10,9 +10,7 @@ const ItemSchema = new Schema({
     color: {
         type: String
     },
-    category: {
-        type: String
-    },
+
     date: {
         type: Date,
         default: Date.now

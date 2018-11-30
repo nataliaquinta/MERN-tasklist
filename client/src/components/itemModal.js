@@ -81,13 +81,13 @@ class ItemModal extends Component {
                         type="text"
                         name="name"
                         id="item"
-                        placeholder="Add new task"
+                        placeholder="Task description"
                         onChange={this.onChange}
                         />
                     </FormGroup>
 
                      <FormGroup>
-                            <Label for="item">Select color</Label>
+                            <Label for="item">Select level</Label>
                             <Input 
                             type="select" 
                             name="color"
@@ -95,12 +95,12 @@ class ItemModal extends Component {
                             defaultValue=""
                             onChange={this.onChange}
                             >
-                            <option value="" disabled>Select Color</option>
-                            <option value='success'>Green</option>
-                            <option value="info">Blue</option>
-                            <option value="warning">Yellow</option>
-                            <option value="danger">Red</option>
-                            <option value="secondary">Grey</option>
+                            <option value="" disabled>Select Level</option>
+                            <option value='success'>SAR</option>
+                            <option value="info">OPAMP</option>
+                            <option value="warning">DAC</option>
+                            <option value="danger">SDM</option>
+                            <option value="secondary">TOPLVL</option>
                             </Input>
                             </FormGroup>
                        

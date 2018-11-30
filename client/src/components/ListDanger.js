@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import {getItems, deleteItem} from '../actions/itemActions';
 import PropTypes from 'prop-types';
 
-class ShoppingList extends Component {
+class ListDanger extends Component {
    
 
     componentDidMount() {
@@ -25,10 +25,13 @@ render() {
 
 
         <Container>       
-          
                 <ListGroup>
                     <TransitionGroup className="shopping-list">
-                    {items.map(({_id, name, color}) => ( //MongoDB uses _id for id
+                    {items
+                    .filter(items => {
+                        return items.color = 'danger';
+                      })
+                    .map(({_id, name, color}) => ( //MongoDB uses _id for id
                         <CSSTransition key={_id} timeout={500} classNames="fade">
 
                         <ListGroupItem color={color} >
@@ -57,7 +60,7 @@ render() {
 }
 }
 
-ShoppingList.propTypes = {
+ListDanger.propTypes = {
     getItems: PropTypes.func.isRequired,
     item: PropTypes.object.isRequired
 }
@@ -66,6 +69,6 @@ const mapStatetoProps = (state) => ({
     item: state.item //item = stateReducer
 });
 
-export default connect(mapStatetoProps, {getItems, deleteItem})(ShoppingList);
+export default connect(mapStatetoProps, {getItems, deleteItem})(ListDanger);
 
 
