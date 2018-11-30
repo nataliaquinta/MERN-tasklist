@@ -29,7 +29,10 @@ render() {
                     <TransitionGroup className="shopping-list">
                     {items
                     .filter(items => {
-                        return items.color = 'success';
+                        if(items.color === 'success') {
+                            return items.color = 'success';
+                        }
+                         
                       })
                     .map(({_id, name, color}) => ( //MongoDB uses _id for id
                         <CSSTransition key={_id} timeout={500} classNames="fade">
